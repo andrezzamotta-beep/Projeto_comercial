@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-criffer-primary: #FF6A22;
+  --color-criffer-light: #FF8A50;
+  --color-criffer-dark: #E0550B;
+  --color-dashboard-bg: #F5F6FA;
+  --color-dashboard-card: #FFFFFF;
+  --color-dashboard-text: #1A1A1A;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-dashboard-bg);
+    color: var(--color-dashboard-text);
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+@layer components {
+  /* Escala tipográfica fluida (27" a 65" TV) */
+  .tv-kpi-value { 
+    font-size: clamp(1.75rem, 3.5vw, 4rem); /* De ~28px até ~64px */
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #111827; 
+  }
+  .tv-kpi-label { 
+    font-size: clamp(0.875rem, 1.5vw, 1.5rem); /* De 14px até 24px */
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+  .tv-kpi-variation { 
+    font-size: clamp(0.875rem, 1.2vw, 1.25rem); /* De 14px até 20px */
+    font-weight: 500; 
+  }
+  
+  .tv-section-title { 
+    font-size: clamp(1.25rem, 2vw, 2.25rem); /* De 20px até 36px */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+  
+  @media (min-width: 1536px) {
+    .tv-section-title {
+      margin-bottom: 1.5rem;
+    }
+  }
+  .tv-subtitle { 
+    font-size: clamp(0.875rem, 1.5vw, 1.5rem);
+    font-weight: 500;
+    color: #6b7280; 
+  }
+  
+  .tv-list-item { 
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+    color: #374151;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+  }
+  .tv-list-value { 
+    font-size: clamp(1rem, 1.8vw, 1.75rem);
+    font-weight: 700;
+    color: #111827; 
+  }
+  .tv-caption { 
+    font-size: clamp(0.75rem, 1.2vw, 1.125rem);
+    font-weight: 500;
+    color: #6b7280; 
+  }
+  
+  /* Estrutura responsiva */
+  .tv-card { 
+    padding: clamp(1.5rem, 2.5vw, 3rem); /* De 24px até 48px */
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px -4px rgba(0,0,0,0.05);
+    border: 1px solid #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+  }
+
+  @media (min-width: 1536px) {
+    .tv-card {
+      border-radius: 1rem;
+    }
+  }
+  
+  /* Header */
+  .tv-header {
+    height: clamp(5rem, 7vw, 8rem); /* De 80px até 128px */
+    padding: 0 clamp(1.5rem, 3vw, 4rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tv-header-title {
+    font-size: clamp(1.25rem, 2vw, 2.25rem);
+    font-weight: 600;
+    color: #1f2937;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
